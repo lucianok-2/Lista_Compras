@@ -20,7 +20,8 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(packageContext())
+                Intent i = new Intent(Inicio.this,registrar.class);
+                startActivity(i);
             }
         });
     }
