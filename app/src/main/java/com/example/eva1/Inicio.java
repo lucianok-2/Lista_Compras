@@ -9,12 +9,13 @@ import android.widget.Button;
 
 public class Inicio extends AppCompatActivity {
     Button registrar;
+    Button logearse;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
         registrar = (Button)findViewById(R.id.boton_registro);
-
+        logearse =(Button)findViewById(R.id.boton_inicio);
         registrar.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -24,5 +25,8 @@ public class Inicio extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
+
     }
 }
