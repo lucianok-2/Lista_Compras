@@ -5,14 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class Compras extends AppCompatActivity {
+    Button btn_crear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compras);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        btn_crear=findViewById(R.id.btn_crear);
+        btn_crear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -25,4 +35,5 @@ public class Compras extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
