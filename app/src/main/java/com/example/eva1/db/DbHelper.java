@@ -8,10 +8,11 @@ import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
 
+
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NOMBRE = "lista.db";
     private static final String TABLE_PRODUCTOS = "productos";
-    private static final String TABLE_LISTA_COMPRAS = "Compras";
+    private static final String TABLE_LISTAS_COMPRAS = "listas_compras";
 
     public DbHelper(@Nullable Context context) {
         super(context, DATABASE_NOMBRE, null, DATABASE_VERSION);
@@ -19,7 +20,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String createTable = "CREATE TABLE " + TABLE_PRODUCTOS + "(" +
+        // Crear la tabla de productos
+        String createTableProductos = "CREATE TABLE " + TABLE_PRODUCTOS + "(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT NOT NULL," +
                 "fecha_compra TEXT," +
@@ -28,14 +30,26 @@ public class DbHelper extends SQLiteOpenHelper {
                 "marca TEXT," +
                 "precio REAL," +
                 "lista_compras_id INTEGER," +
-                "FOREIGN KEY(lista_compras_id) REFERENCES " + TABLE_LISTA_COMPRAS + "(id)" +
+                "FOREIGN KEY(lista_compras_id) REFERENCES " + TABLE_LISTAS_COMPRAS + "(id)" +
                 ")";
-        sqLiteDatabase.execSQL(createTable);
+        sqLiteDatabase.execSQL(createTableProductos);
 
+        // Crear la tabla de listas de compras
+        String createTableListasCompras = "CREATE TABLE " + TABLE_LISTAS_COMPRAS + "(" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "nombre TEXT NOT NULL," +
+                "fecha_creacion TEXT NOT NULL" +
+                ")";
+        sqLiteDatabase.execSQL(createTableListasCompras);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    // Método para obtener el nombre de la tabla de productos
+    public String getTableProductos() {
+        return TABLE_PRODUCTOS;
     }
 }
