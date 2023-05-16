@@ -65,6 +65,7 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.Prod
                     intent.putExtra("ID", idProducto);
                     context.startActivity(intent);
 
+
                 }
             });
         }

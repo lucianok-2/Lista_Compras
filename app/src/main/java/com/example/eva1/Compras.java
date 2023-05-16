@@ -106,6 +106,8 @@ public class Compras extends AppCompatActivity implements View.OnClickListener {
 
         // Notificar al adaptador que los datos han cambiado
         adapter.notifyDataSetChanged();
+
+
     }
 
     @Override
