@@ -21,6 +21,8 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_LUGAR_COMPRA = "lugar_compra";
     public static final String COLUMN_MARCA = "marca";
     public static final String COLUMN_PRECIO = "precio";
+
+    public static final String COLUMN_CANTIDAD = "precio";
     public static final String COLUMN_LISTA_COMPRAS_ID = "lista_compras_id";
 
     // Constantes de las columnas de la tabla listas_compras
@@ -43,6 +45,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 COLUMN_LUGAR_COMPRA + " TEXT," +
                 COLUMN_MARCA + " TEXT," +
                 COLUMN_PRECIO + " REAL," +
+                COLUMN_CANTIDAD + " REAL," +
                 COLUMN_LISTA_COMPRAS_ID + " INTEGER," +
                 "FOREIGN KEY(" + COLUMN_LISTA_COMPRAS_ID + ") REFERENCES " + TABLE_LISTAS_COMPRAS + "(" + COLUMN_LISTA_COMPRAS_ID + ")" +
                 ")";

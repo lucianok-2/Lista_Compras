@@ -9,6 +9,16 @@ public class Producto {
     private String marca;
     private String lugarCompra;
 
+    private int cantidad;
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
     public Producto(int id, String nombre, double precio, String fechaVencimiento, String fechaCompra, String marca, String lugarCompra) {
         this.id = id;
         this.nombre = nombre;
@@ -17,6 +27,7 @@ public class Producto {
         this.fechaCompra = fechaCompra;
         this.marca = marca;
         this.lugarCompra = lugarCompra;
+        this.cantidad = cantidad;
     }
 
     // Getters y setters para los atributos

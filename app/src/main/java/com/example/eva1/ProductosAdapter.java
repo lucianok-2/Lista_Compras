@@ -1,5 +1,6 @@
 package com.example.eva1;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,8 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.Prod
         holder.nombreProducto.setText(producto.getNombre());
         holder.precioProducto.setText(String.valueOf(producto.getPrecio()));
         holder.fechaVencimientoProducto.setText(producto.getFechaVencimiento());
+        holder.cantidadProducto.setText(String.valueOf(producto.getCantidad()));
+        holder.idProducto = producto.getId();
     }
 
     @Override
@@ -44,13 +47,26 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.Prod
     }
 
     public static class ProductoViewHolder extends RecyclerView.ViewHolder {
-        public TextView nombreProducto, precioProducto, fechaVencimientoProducto;
+        public TextView nombreProducto, precioProducto, fechaVencimientoProducto, cantidadProducto;
+        public int idProducto;
 
         public ProductoViewHolder(View itemView) {
             super(itemView);
             nombreProducto = itemView.findViewById(R.id.nombre_producto);
             precioProducto = itemView.findViewById(R.id.precio_producto);
             fechaVencimientoProducto = itemView.findViewById(R.id.fecha_vencimiento_producto);
+            cantidadProducto = itemView.findViewById(R.id.cantidad_producto);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context context = view.getContext();
+                    Intent intent = new Intent(context,modificar.class);
+                    intent.putExtra("ID", idProducto);
+                    context.startActivity(intent);
+
+                }
+            });
         }
     }
 }
