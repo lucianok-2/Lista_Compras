@@ -69,6 +69,7 @@ public class Compras extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.btn_editar:
                 // Código para editar productos
+
                 break;
             case R.id.btn_eliminar:
                 // Código para eliminar productos
@@ -84,7 +85,7 @@ public class Compras extends AppCompatActivity implements View.OnClickListener {
         DbHelper dbHelper = new DbHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        Cursor cursor = db.query(dbHelper.TABLE_PRODUCTOS, null, null, null, null, null, null);
+        Cursor cursor = db.query(dbHelper.getTableProductos(), null, null, null, null, null, null);
         listaProductos.clear();
 
         while (cursor.moveToNext()) {
@@ -92,8 +93,11 @@ public class Compras extends AppCompatActivity implements View.OnClickListener {
             String nombre = cursor.getString(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_NOMBRE));
             double precio = cursor.getDouble(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_PRECIO));
             String fechaVencimiento = cursor.getString(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_FECHA_VENCIMIENTO));
+            String fechaCompra = cursor.getString(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_FECHA_COMPRA));
+            String marca = cursor.getString(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_MARCA));
+            String lugarCompra = cursor.getString(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_LUGAR_COMPRA));
             // Agregar los datos del producto a la lista
-            listaProductos.add(new Producto(id, nombre, precio, fechaVencimiento));
+            listaProductos.add(new Producto(id, nombre, precio, fechaVencimiento, fechaCompra, marca, lugarCompra));
 
         }
 
