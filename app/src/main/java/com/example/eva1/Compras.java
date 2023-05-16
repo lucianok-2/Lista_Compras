@@ -91,8 +91,10 @@ public class Compras extends AppCompatActivity implements View.OnClickListener {
             int id = cursor.getInt(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_ID));
             String nombre = cursor.getString(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_NOMBRE));
             double precio = cursor.getDouble(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_PRECIO));
+            String fechaVencimiento = cursor.getString(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_FECHA_VENCIMIENTO));
             // Agregar los datos del producto a la lista
-            listaProductos.add(new Producto(id, nombre, precio));
+            listaProductos.add(new Producto(id, nombre, precio, fechaVencimiento));
+
         }
 
         cursor.close();

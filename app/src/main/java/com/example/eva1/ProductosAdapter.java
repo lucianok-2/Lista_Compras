@@ -35,6 +35,7 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.Prod
         Producto producto = listaProductos.get(position);
         holder.nombreProducto.setText(producto.getNombre());
         holder.precioProducto.setText(String.valueOf(producto.getPrecio()));
+        holder.fechaVencimientoProducto.setText(producto.getFechaVencimiento());
     }
 
     @Override
@@ -43,13 +44,13 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.Prod
     }
 
     public static class ProductoViewHolder extends RecyclerView.ViewHolder {
-        public TextView nombreProducto, precioProducto;
+        public TextView nombreProducto, precioProducto, fechaVencimientoProducto;
 
         public ProductoViewHolder(View itemView) {
             super(itemView);
             nombreProducto = itemView.findViewById(R.id.nombre_producto);
             precioProducto = itemView.findViewById(R.id.precio_producto);
+            fechaVencimientoProducto = itemView.findViewById(R.id.fecha_vencimiento_producto);
         }
     }
 }
-
