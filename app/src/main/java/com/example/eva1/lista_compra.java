@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.eva1.db.DbHelper;
 
 public class lista_compra extends AppCompatActivity implements View.OnClickListener{
     Button lista;
@@ -15,6 +18,7 @@ public class lista_compra extends AppCompatActivity implements View.OnClickListe
     Button inventario;
     Button recordatorio;
     Button lugar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,8 @@ public class lista_compra extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.boton_inicio3:
+                DbHelper dbHelper = new DbHelper(lista_compra.this);
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
                 Intent i = new Intent(lista_compra.this,Compras.class);
                 startActivity(i);
                 break;
