@@ -12,12 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.eva1.R;
 import com.example.eva1.db.DbHelper;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 public class productos extends AppCompatActivity {
 
@@ -31,13 +26,13 @@ public class productos extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Obtener referencias a los elementos de la interfaz
-        etNombre = findViewById(R.id.et_nombre);
-        etMarca = findViewById(R.id.et_marca);
-        etPrecio = findViewById(R.id.et_precio);
-        etLugarCompra = findViewById(R.id.et_lugar_compra);
-        etFechaCompra = findViewById(R.id.et_fecha_compra);
-        etFechaVencimiento = findViewById(R.id.et_fecha_vencimiento);
-        btnGuardar = findViewById(R.id.btn_guardar);
+        etNombre = findViewById(R.id.et_nombre_1);
+        etMarca = findViewById(R.id.et_marca_1);
+        etPrecio = findViewById(R.id.et_precio_1);
+        etLugarCompra = findViewById(R.id.et_lugar_compra_1);
+        etFechaCompra = findViewById(R.id.et_fecha_compra_1);
+        etFechaVencimiento = findViewById(R.id.et_fecha_vencimiento_1);
+        btnGuardar = findViewById(R.id.btn_guardar_1);
 
         // Configurar el botón guardar
         btnGuardar.setOnClickListener(new View.OnClickListener() {

@@ -20,7 +20,7 @@
         android:layout_marginBottom="16dp"/>
 
     <EditText
-        android:id="@+id/et_nombre"
+        android:id="@+id/et_nombre_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:labelFor="@+id/Nombreid"
@@ -30,13 +30,13 @@
         android:layout_marginBottom="16dp"
         android:hint="Nombre"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/et_marca"
+        app:layout_constraintBottom_toTopOf="@+id/et_marca_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
 
     <EditText
-        android:id="@+id/et_marca"
+        android:id="@+id/et_marca_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -45,12 +45,12 @@
         android:layout_marginBottom="16dp"
         android:hint="Marca"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/et_precio"
+        app:layout_constraintBottom_toTopOf="@+id/et_precio_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_nombre" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nombre_1" />
     <EditText
-        android:id="@+id/cantidad"
+        android:id="@+id/cantidad_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -61,15 +61,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_lugar_compra" />
+        app:layout_constraintTop_toBottomOf="@+id/et_lugar_compra_1" />
 
     <EditText
-        android:id="@+id/et_precio"
+        android:id="@+id/et_precio_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:hint="Precio"
-        app:layout_constraintTop_toBottomOf="@+id/et_marca"
+        app:layout_constraintTop_toBottomOf="@+id/et_marca_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="32dp"
@@ -77,7 +77,7 @@
         android:layout_marginEnd="32dp"/>
 
     <EditText
-        android:id="@+id/et_lugar_compra"
+        android:id="@+id/et_lugar_compra_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -86,18 +86,18 @@
         android:layout_marginBottom="16dp"
         android:hint="Lugar de compra"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/et_fecha_compra"
+        app:layout_constraintBottom_toTopOf="@+id/et_fecha_compra_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_precio" />
+        app:layout_constraintTop_toBottomOf="@+id/et_precio_1" />
 
     <EditText
-        android:id="@+id/et_fecha_compra"
+        android:id="@+id/et_fecha_compra_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="date"
         android:hint="Fecha de compra"
-        app:layout_constraintTop_toBottomOf="@+id/et_lugar_compra"
+        app:layout_constraintTop_toBottomOf="@+id/et_lugar_compra_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="32dp"
@@ -105,7 +105,7 @@
         android:layout_marginEnd="32dp"/>
 
     <EditText
-        android:id="@+id/et_fecha_vencimiento"
+        android:id="@+id/et_fecha_vencimiento_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -116,16 +116,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_fecha_compra" />
+        app:layout_constraintTop_toBottomOf="@+id/et_fecha_compra_1" />
 
     <Button
-        android:id="@+id/btn_guardar"
+        android:id="@+id/btn_guardar_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Guardar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_fecha_vencimiento" />
+        app:layout_constraintTop_toBottomOf="@+id/et_fecha_vencimiento_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
